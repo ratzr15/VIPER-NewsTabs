@@ -13,4 +13,7 @@ protocol HorizontaltabsPresenter: class {
     var router: HorizontaltabsRouter? { get set }
     var interactor: HorizontaltabsInteractor? { get set }
     var view: HorizontaltabsViewController? { get set }
+    
+    func didSelect(index: Int)
+
 }

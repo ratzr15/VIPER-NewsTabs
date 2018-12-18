@@ -11,4 +11,8 @@ import Foundation
 protocol HorizontaltabsRouter {
 
     var presenter: HorizontaltabsPresenter? { get set }
+        
+    func menuBarDidSelectItemAt(index: Int)
+
+
 }
