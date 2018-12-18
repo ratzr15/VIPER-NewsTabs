@@ -13,4 +13,10 @@ class HorizontaltabsDefaultPresenter: HorizontaltabsPresenter {
     var router: HorizontaltabsRouter?
     var interactor: HorizontaltabsInteractor?
     weak var view: HorizontaltabsViewController?
+    
+    
+    func didSelect(index: Int) {
+        self.router?.menuBarDidSelectItemAt(index: index)
+    }
+
 }
