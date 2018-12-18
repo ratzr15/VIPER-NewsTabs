@@ -11,7 +11,13 @@ import UIKit
 
 class HorizontaltabsDefaultRouter: HorizontaltabsRouter {
 
+
     weak var presenter: HorizontaltabsPresenter?
-    weak var viewController: UIViewController?
+    weak var view: UIView?
+
+    func menuBarDidSelectItemAt(index: Int) {
+        //TODO: Perfom navigation
+    }
+    
 
 }
