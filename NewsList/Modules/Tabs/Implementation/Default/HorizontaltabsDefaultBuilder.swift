@@ -11,12 +11,11 @@ import UIKit
 
 class HorizontaltabsDefaultBuilder {
 
-    func main() -> UIViewController {
+    func main() -> UIView {
         let view = HorizontaltabsDefaultViewController()
         let interactor = HorizontaltabsDefaultInteractor()
         let presenter = HorizontaltabsDefaultPresenter()
         let router = HorizontaltabsDefaultRouter()
-        let controller = UINavigationController(rootViewController: view)
 
         view.presenter = presenter
 
@@ -25,8 +24,8 @@ class HorizontaltabsDefaultBuilder {
         presenter.router = router
 
         router.presenter = presenter
-        router.viewController = view
+        router.view = view
 
-        return controller
+        return router.view ?? view
     }
 }
