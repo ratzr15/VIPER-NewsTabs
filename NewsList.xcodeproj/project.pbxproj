@@ -23,9 +23,9 @@
 		AE9A201C21C8EA270070984B /* HorizontaltabsDefaultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A201521C8EA270070984B /* HorizontaltabsDefaultPresenter.swift */; };
 		AE9A201D21C8EA270070984B /* HorizontaltabsDefaultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A201521C8EA270070984B /* HorizontaltabsDefaultPresenter.swift */; };
 		AE9A201E21C8EA270070984B /* HorizontaltabsDefaultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A201521C8EA270070984B /* HorizontaltabsDefaultPresenter.swift */; };
-		AE9A201F21C8EA270070984B /* HorizontaltabsDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A201621C8EA270070984B /* HorizontaltabsDefaultViewController.swift */; };
-		AE9A202021C8EA270070984B /* HorizontaltabsDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A201621C8EA270070984B /* HorizontaltabsDefaultViewController.swift */; };
-		AE9A202121C8EA270070984B /* HorizontaltabsDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A201621C8EA270070984B /* HorizontaltabsDefaultViewController.swift */; };
+		AE9A201F21C8EA270070984B /* HorizontalTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A201621C8EA270070984B /* HorizontalTabsView.swift */; };
+		AE9A202021C8EA270070984B /* HorizontalTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A201621C8EA270070984B /* HorizontalTabsView.swift */; };
+		AE9A202121C8EA270070984B /* HorizontalTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A201621C8EA270070984B /* HorizontalTabsView.swift */; };
 		AE9A202221C8EA270070984B /* HorizontaltabsDefaultBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A201721C8EA270070984B /* HorizontaltabsDefaultBuilder.swift */; };
 		AE9A202321C8EA270070984B /* HorizontaltabsDefaultBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A201721C8EA270070984B /* HorizontaltabsDefaultBuilder.swift */; };
 		AE9A202421C8EA270070984B /* HorizontaltabsDefaultBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A201721C8EA270070984B /* HorizontaltabsDefaultBuilder.swift */; };
@@ -74,7 +74,7 @@
 		AE9A200421C8E9F30070984B /* HorizontalTabProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalTabProtocols.swift; sourceTree = "<group>"; };
 		AE9A201421C8EA270070984B /* HorizontaltabsDefaultInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontaltabsDefaultInteractor.swift; sourceTree = "<group>"; };
 		AE9A201521C8EA270070984B /* HorizontaltabsDefaultPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontaltabsDefaultPresenter.swift; sourceTree = "<group>"; };
-		AE9A201621C8EA270070984B /* HorizontaltabsDefaultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontaltabsDefaultViewController.swift; sourceTree = "<group>"; };
+		AE9A201621C8EA270070984B /* HorizontalTabsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalTabsView.swift; sourceTree = "<group>"; };
 		AE9A201721C8EA270070984B /* HorizontaltabsDefaultBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontaltabsDefaultBuilder.swift; sourceTree = "<group>"; };
 		AE9A201821C8EA270070984B /* HorizontaltabsDefaultRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontaltabsDefaultRouter.swift; sourceTree = "<group>"; };
 		AEE75C4221CA260C00B1B7E2 /* BasicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCell.swift; sourceTree = "<group>"; };
@@ -187,11 +187,12 @@
 		AE9A201221C8E9FF0070984B /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
-				AE9A201721C8EA270070984B /* HorizontaltabsDefaultBuilder.swift */,
+				AEE75C3F21CA22C000B1B7E2 /* View */,
 				AEE75C4121CA22FC00B1B7E2 /* Interactor */,
 				AEE75C4021CA22CE00B1B7E2 /* Presenter */,
+				AEE75C4C21CA3DBE00B1B7E2 /* Entity */,
 				AEE75C3E21CA22B000B1B7E2 /* Router */,
-				AEE75C3F21CA22C000B1B7E2 /* View */,
+				AEE75C4B21CA3DA000B1B7E2 /* Builder */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -207,7 +208,7 @@
 		AEE75C3F21CA22C000B1B7E2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AE9A201621C8EA270070984B /* HorizontaltabsDefaultViewController.swift */,
+				AE9A201621C8EA270070984B /* HorizontalTabsView.swift */,
 				AEE75C4221CA260C00B1B7E2 /* BasicCell.swift */,
 			);
 			path = View;
@@ -235,6 +236,21 @@
 				AEE75C4621CA294A00B1B7E2 /* Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AEE75C4B21CA3DA000B1B7E2 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				AE9A201721C8EA270070984B /* HorizontaltabsDefaultBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		AEE75C4C21CA3DBE00B1B7E2 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,7 +391,7 @@
 				AE9A200C21C8E9F30070984B /* HorizontalTabProtocols.swift in Sources */,
 				AEE75C4721CA294A00B1B7E2 /* Extensions.swift in Sources */,
 				AE9A202521C8EA270070984B /* HorizontaltabsDefaultRouter.swift in Sources */,
-				AE9A201F21C8EA270070984B /* HorizontaltabsDefaultViewController.swift in Sources */,
+				AE9A201F21C8EA270070984B /* HorizontalTabsView.swift in Sources */,
 				AE37F6F82199A708001787F6 /* ViewController.swift in Sources */,
 				AE37F6F62199A708001787F6 /* AppDelegate.swift in Sources */,
 			);
@@ -389,7 +405,7 @@
 				AEE75C4821CA294A00B1B7E2 /* Extensions.swift in Sources */,
 				AE9A201A21C8EA270070984B /* HorizontaltabsDefaultInteractor.swift in Sources */,
 				AE9A202321C8EA270070984B /* HorizontaltabsDefaultBuilder.swift in Sources */,
-				AE9A202021C8EA270070984B /* HorizontaltabsDefaultViewController.swift in Sources */,
+				AE9A202021C8EA270070984B /* HorizontalTabsView.swift in Sources */,
 				AEE75C4421CA260C00B1B7E2 /* BasicCell.swift in Sources */,
 				AE37F70B2199A709001787F6 /* NewsListTests.swift in Sources */,
 				AE9A202621C8EA270070984B /* HorizontaltabsDefaultRouter.swift in Sources */,
@@ -405,7 +421,7 @@
 				AEE75C4921CA294A00B1B7E2 /* Extensions.swift in Sources */,
 				AE9A201B21C8EA270070984B /* HorizontaltabsDefaultInteractor.swift in Sources */,
 				AE9A202421C8EA270070984B /* HorizontaltabsDefaultBuilder.swift in Sources */,
-				AE9A202121C8EA270070984B /* HorizontaltabsDefaultViewController.swift in Sources */,
+				AE9A202121C8EA270070984B /* HorizontalTabsView.swift in Sources */,
 				AEE75C4521CA260C00B1B7E2 /* BasicCell.swift in Sources */,
 				AE37F7162199A709001787F6 /* NewsListUITests.swift in Sources */,
 				AE9A202721C8EA270070984B /* HorizontaltabsDefaultRouter.swift in Sources */,

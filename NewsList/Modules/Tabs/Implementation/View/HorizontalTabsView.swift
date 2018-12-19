@@ -9,10 +9,12 @@
 import Foundation
 import UIKit
 
-class HorizontaltabsDefaultViewController: UIView, HorizontaltabsViewController {
+class HorizontalTabsView: UIView, HorizontaltabsViewController {
 
     var presenter: HorizontaltabsPresenter?
 
+    var cellId = "BasicCell"
+    
     lazy var collView: UICollectionView = {
         let layOut = UICollectionViewFlowLayout()
         let cv = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: layOut)
@@ -35,23 +37,49 @@ class HorizontaltabsDefaultViewController: UIView, HorizontaltabsViewController 
             self.collView.reloadData()
         }
     }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        customIntializer()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        customIntializer()
+    }
+    
+    private func customIntializer () {
+        collView.register(BasicCell.self, forCellWithReuseIdentifier: cellId)
+        addSubview(collView)
+        addConstraintsWithFormatString(formate: "V:|[v0]|", views: collView)
+        addConstraintsWithFormatString(formate: "H:|[v0]|", views: collView)
+        backgroundColor = .clear
+    }
+    
 }
 
-extension HorizontaltabsDefaultViewController: UICollectionViewDelegate {
+extension HorizontalTabsView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.presenter?.didSelect(index: indexPath.item)
     }
 }
 
-extension HorizontaltabsDefaultViewController: UICollectionViewDataSource {
+extension HorizontalTabsView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? BasicCell {
+            cell.titleLabel.text = dataArray[indexPath.item]
+            return cell
+        }
         return UICollectionViewCell()
     }
     
+}
+
+extension HorizontalTabsView:  UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if isSizeToFitCellsNeeded {
             let sizeee = CGSize.init(width: 500, height: self.frame.height)

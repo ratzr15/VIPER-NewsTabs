@@ -12,7 +12,7 @@ import UIKit
 class HorizontaltabsDefaultBuilder {
 
     func main() -> UIView {
-        let view = HorizontaltabsDefaultViewController()
+        let view = HorizontalTabsView()
         let interactor = HorizontaltabsDefaultInteractor()
         let presenter = HorizontaltabsDefaultPresenter()
         let router = HorizontaltabsDefaultRouter()

@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var menuBarView: HorizontaltabsDefaultViewController!
+    @IBOutlet weak var menuBarView: HorizontalTabsView!
 
     var currentIndex: Int = 0
     var tabs = ["Menu TAB 1","Menu TAB 2","Menu TAB 3","Menu TAB 4","Menu TAB 5","Menu TAB 6", "Menu TAB 7", "Menu TAB 8", "Menu TAB 9", "Menu TAB 10"]
