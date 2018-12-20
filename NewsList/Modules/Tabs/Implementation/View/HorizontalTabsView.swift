@@ -9,10 +9,8 @@
 import Foundation
 import UIKit
 
-class HorizontalTabsView: UIView, HorizontaltabsViewController {
-
-    var presenter: HorizontaltabsPresenter?
-
+class HorizontalTabsView: UIView {
+    
     var cellId = "BasicCell"
     
     lazy var collView: UICollectionView = {
@@ -56,11 +54,13 @@ class HorizontalTabsView: UIView, HorizontaltabsViewController {
         backgroundColor = .clear
     }
     
+    
+    
 }
 
 extension HorizontalTabsView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.presenter?.didSelect(index: indexPath.item)
+
     }
 }
 

@@ -7,23 +7,36 @@
 //
 
 import Foundation
+import UIKit
 
-protocol HorizontaltabsInteractor {
-    var presenter: HorizontaltabsPresenter? { get set }
+protocol ViewToPresenterProtocol: class {
+    var  view: PresenterToViewProtocol? {get set};
+    var  interector: PresentorToInterectorProtocol? {get set};
+    var  router: PresenterToRouterProtocol? {get set}
+    func updateView();
 }
 
-protocol HorizontaltabsPresenter: class {
-    var router: HorizontaltabsRouter? { get set }
-    var interactor: HorizontaltabsInteractor? { get set }
-    var view: HorizontaltabsViewController? { get set }
-    func didSelect(index: Int)
+protocol PresenterToRouterProtocol {
+    static func createModule() -> UIViewController;
 }
 
-protocol HorizontaltabsRouter {
-    var presenter: HorizontaltabsPresenter? { get set }
-    func menuBarDidSelectItemAt(index: Int)
+protocol InterectorToPresenterProtocol: class {
+    func dataFetched(tabs: [TabsViewModel]);
+    func dataFetchFailed();
 }
 
-protocol HorizontaltabsViewController: class {
-    var presenter: HorizontaltabsPresenter? { get set }
+protocol PresentorToInterectorProtocol {
+    var presenter: InterectorToPresenterProtocol? {get set} ;
+    func fetchData();
+}
+
+//VM
+protocol FilterCellDisplayable: class {
+    var name:String? {get set}
+    var value:String? {get set}
+}
+
+protocol PresenterToViewProtocol: class {
+    func showData(tabs: [TabsViewModel]);
+    func showError();
 }
