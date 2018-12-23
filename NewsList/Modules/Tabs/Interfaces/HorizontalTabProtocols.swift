@@ -31,12 +31,16 @@ protocol PresentorToInterectorProtocol {
 }
 
 //VM
-protocol FilterCellDisplayable: class {
-    var name:String? {get set}
-    var value:String? {get set}
+protocol CellDisplayable{
+    var text:String? {get set}
+    var font:UIFont? {get set}
+    var textColor:UIColor? {get set}
+    var bgColor:UIColor? {get set}
+
 }
 
 protocol PresenterToViewProtocol: class {
     func showData(tabs: [TabsViewModel]);
     func showError();
 }
+
