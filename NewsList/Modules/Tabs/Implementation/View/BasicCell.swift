@@ -14,7 +14,7 @@ struct TabVM: CellDisplayable {
     var textColor:UIColor?
     var bgColor:UIColor?
 
-    init(text: String?, font: UIFont? = UIFont.init(name: "", size: 12), textColor: UIColor? = UIColor.yellow, bgColor: UIColor? = UIColor.black) {
+    init(text: String?, font: UIFont? = UIFont.init(name: "", size: 12), textColor: UIColor? = UIColor.orange, bgColor: UIColor? = UIColor.black) {
         self.text = text
         self.font = font
         self.textColor = textColor

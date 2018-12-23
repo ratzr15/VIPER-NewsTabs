@@ -13,7 +13,7 @@ class TabsInteractor: PresentorToInterectorProtocol {
     var presenter: InterectorToPresenterProtocol?
     
     //Dummy Data
-    var tabs = ["Menu TAB 1","Menu TAB 2","Menu TAB 3","Menu TAB 4","Menu TAB 5","Menu TAB 6", "Menu TAB 7", "Menu TAB 8", "Menu TAB 9", "Menu TAB 10"]
+    var tabs = ["The Guardian","Google RSS","Apple Insider","Mac Rumors","OSX Daily","Mactrast", "CNET", "Macnn", "Reddit", "AirMail"]
 
     func fetchData() {
         
