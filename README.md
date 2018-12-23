@@ -1,4 +1,15 @@
-Architecture - VIPER - https://theswiftdev.com/2018/03/12/the-ultimate-viper-architecture-tutorial/
+# Simple horizontal tabs w/ VIPER base
+
+## Misssion 
+__Modular - Tabs (Horizontal CollectionView) to use in your project.__
+
+## Supported features
+__This repo can be used is an example for__
+
+| Feature                        | Supported | Note                                            |
+| ------------------------------ | --------- | ----------------------------------------------- |
+| VIPER architecture             | Yes       |                                                 |
+| Horizontal scroller            | Yes       |                                                 |
 
 
-Design - MaterialI/O - https://material.io/develop/ios/
+
