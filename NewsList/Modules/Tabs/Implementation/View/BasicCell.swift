@@ -8,6 +8,21 @@
 
 import UIKit
 
+struct TabVM: CellDisplayable {
+    var text:String?
+    var font:UIFont?
+    var textColor:UIColor?
+    var bgColor:UIColor?
+
+    init(text: String?, font: UIFont? = UIFont.init(name: "", size: 12), textColor: UIColor? = UIColor.yellow, bgColor: UIColor? = UIColor.black) {
+        self.text = text
+        self.font = font
+        self.textColor = textColor
+        self.bgColor = bgColor
+    }
+    
+}
+
 class BasicCell: UICollectionViewCell {
     let titleLabel: UILabel = {
         let lbl = UILabel()
@@ -15,11 +30,12 @@ class BasicCell: UICollectionViewCell {
     }()
     
     var indicatorView: UIView!
-
+    var model: TabVM! = TabVM.init(text: "")
+ 
     override var isSelected: Bool {
         didSet{
             UIView.animate(withDuration: 0.30) {
-                self.indicatorView.backgroundColor = self.isSelected ? UIColor.blue : UIColor.clear
+                self.indicatorView.backgroundColor = self.isSelected ? self.model.textColor : UIColor.clear
                 self.layoutIfNeeded()
             }
         }
@@ -36,6 +52,15 @@ class BasicCell: UICollectionViewCell {
         addConstraint(NSLayoutConstraint.init(item: titleLabel, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
         
         setupIndicatorView()
+    }
+    
+    
+    func configure(model:TabVM) {
+        self.model = model
+        self.contentView.backgroundColor = model.bgColor
+        titleLabel.text = model.text
+        titleLabel.font = model.font
+        titleLabel.textColor = model.textColor
     }
     
     required init?(coder aDecoder: NSCoder) {
