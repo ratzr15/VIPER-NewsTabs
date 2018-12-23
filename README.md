@@ -59,9 +59,9 @@ func tabSelected(menu: HorizontalTabsView, index: Int) {
 - [ ] Create Pod
 - [ ] Publish Pod
 
-## Thanks
-- [✅] https://medium.com/swift-india/android-like-tabs-in-ios-sliding-tabs-segments-4dc38d801463
-- [✅] https://theswiftdev.com/2018/03/12/the-ultimate-viper-architecture-tutorial/
+## Credits & Thanks
+- ✅ https://medium.com/swift-india/android-like-tabs-in-ios-sliding-tabs-segments-4dc38d801463
+- ✅ https://theswiftdev.com/2018/03/12/the-ultimate-viper-architecture-tutorial/
 
 
 
