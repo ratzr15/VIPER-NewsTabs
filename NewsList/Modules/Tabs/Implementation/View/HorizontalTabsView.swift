@@ -9,16 +9,21 @@
 import Foundation
 import UIKit
 
+protocol TabDelegate {
+    func tabSelected(menu: HorizontalTabsView,index: Int)
+}
+
 class HorizontalTabsView: UIView {
     
     var cellId = "BasicCell"
-    
+    var delegate: TabDelegate?
+
     lazy var collView: UICollectionView = {
         let layOut = UICollectionViewFlowLayout()
         let cv = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: layOut)
         cv.showsHorizontalScrollIndicator = false
         layOut.scrollDirection = .horizontal
-        cv.backgroundColor = .white
+        cv.backgroundColor = .clear
         cv.delegate = self
         cv.dataSource = self
         return cv
@@ -60,7 +65,8 @@ class HorizontalTabsView: UIView {
 
 extension HorizontalTabsView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        let index = Int(indexPath.item)
+        delegate?.tabSelected(menu: self, index: index)
     }
 }
 
@@ -71,7 +77,7 @@ extension HorizontalTabsView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? BasicCell {
-            cell.titleLabel.text = dataArray[indexPath.item]
+            cell.configure(model: TabVM.init(text: dataArray[indexPath.item]))
             return cell
         }
         return UICollectionViewCell()
@@ -102,6 +108,6 @@ extension HorizontalTabsView:  UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 }
