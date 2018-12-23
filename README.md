@@ -51,3 +51,11 @@ func tabSelected(menu: HorizontalTabsView, index: Int) {
 	//Callback for selection!
 }
 ```
+
+##My Tasklist
+- [x] Finish my changes
+- [ ] Push my commits to GitHub
+- [ ] Open a pull request
+- [ ] Create Pod
+- [ ] Publish Pod
+
